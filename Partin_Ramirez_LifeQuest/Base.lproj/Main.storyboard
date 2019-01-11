@@ -40,7 +40,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="StartButton" destination="9En-dQ-dJM" id="pap-AT-DVA"/>
+                        <outlet property="StartButton" destination="9En-dQ-dJM" id="qWk-P2-1rK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
