@@ -1,6 +1,7 @@
 
 import Foundation
 
+
 let levelUpXP = 500
 let defaultXp = 250
 let defaultlevel = 1
@@ -14,5 +15,6 @@ func levelUp(){
         currentXP -= 500
     }
 }
+
 
 
