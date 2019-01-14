@@ -16,5 +16,9 @@ func levelUp(){
     }
 }
 
+struct Task {
+    var title: String
+    var completed : Bool
+}
 
 
