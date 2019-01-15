@@ -21,4 +21,7 @@ struct Task {
     var completed : Bool
 }
 
-
+struct socialLink {
+    var name: String
+    var met: Bool
+}

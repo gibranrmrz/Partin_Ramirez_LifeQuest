@@ -14,6 +14,7 @@
 		0FD114A721E52A26000BDBEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FD114A521E52A26000BDBEC /* LaunchScreen.storyboard */; };
 		0FD114B221E52A26000BDBEC /* Partin_Ramirez_LifeQuestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD114B121E52A26000BDBEC /* Partin_Ramirez_LifeQuestTests.swift */; };
 		0FD114BD21E52A26000BDBEC /* Partin_Ramirez_LifeQuestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD114BC21E52A26000BDBEC /* Partin_Ramirez_LifeQuestUITests.swift */; };
+		0FF085C221EE592700C45ACB /* SocialLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF085C121EE592700C45ACB /* SocialLinkViewController.swift */; };
 		5489740821E90A0700F94A39 /* GlobalFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489740721E90A0600F94A39 /* GlobalFile.swift */; };
 		54A98EFB21ED05BA0058A385 /* dailyTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A98EFA21ED05BA0058A385 /* dailyTaskViewController.swift */; };
 /* End PBXBuildFile section */
@@ -49,6 +50,7 @@
 		0FD114B821E52A26000BDBEC /* Partin_Ramirez_LifeQuestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Partin_Ramirez_LifeQuestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FD114BC21E52A26000BDBEC /* Partin_Ramirez_LifeQuestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Partin_Ramirez_LifeQuestUITests.swift; sourceTree = "<group>"; };
 		0FD114BE21E52A26000BDBEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FF085C121EE592700C45ACB /* SocialLinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLinkViewController.swift; sourceTree = "<group>"; };
 		5489740721E90A0600F94A39 /* GlobalFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFile.swift; sourceTree = "<group>"; };
 		54A98EFA21ED05BA0058A385 /* dailyTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dailyTaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,6 +103,7 @@
 		0FD1149B21E52A25000BDBEC /* Partin_Ramirez_LifeQuest */ = {
 			isa = PBXGroup;
 			children = (
+				0FF085C121EE592700C45ACB /* SocialLinkViewController.swift */,
 				5489740721E90A0600F94A39 /* GlobalFile.swift */,
 				0FD1149C21E52A25000BDBEC /* AppDelegate.swift */,
 				0FD1149E21E52A25000BDBEC /* ViewController.swift */,
@@ -266,6 +269,7 @@
 				54A98EFB21ED05BA0058A385 /* dailyTaskViewController.swift in Sources */,
 				0FD1149F21E52A25000BDBEC /* ViewController.swift in Sources */,
 				0FD1149D21E52A25000BDBEC /* AppDelegate.swift in Sources */,
+				0FF085C221EE592700C45ACB /* SocialLinkViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
