@@ -10,21 +10,28 @@ import UIKit
 
 class dailyTaskViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var taskArray: [Task] = []
+    @IBOutlet weak var taskTableView: UITableView!
+    var taskArray: [Int] = [0, 1]
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return taskArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let ourCellsTest = tableView.dequeueReusableCell(withIdentifier: "taskCell1", for: indexPath)
-        ourCellsTest.textLabel?.text = "\(taskArray[indexPath.row].title)"
+        let ourCellsTest = tableView.dequeueReusableCell(withIdentifier: "dailyCell1", for: indexPath)
+        ourCellsTest.textLabel?.text = "\(taskArray[indexPath.row])"
         return ourCellsTest
     }
     
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView.cellForRow(at: indexPath)?.accessoryType != UITableViewCell.AccessoryType.checkmark {
+            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
+        } else {
+            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //taskTableView.isEditing = true
         // Do any additional setup after loading the view.
     }
     
