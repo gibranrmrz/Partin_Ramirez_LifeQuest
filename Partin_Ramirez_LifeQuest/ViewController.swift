@@ -8,6 +8,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var viewOutlet: UIView!
     
     
+    @IBAction func startPressed(_ sender: UIButton) {
+    }
     
 
    
