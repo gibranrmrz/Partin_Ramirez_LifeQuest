@@ -11,9 +11,6 @@ class ViewController: UIViewController {
     @IBAction func startPressed(_ sender: UIButton) {
     }
     
-
-   
-    
     
     
     
