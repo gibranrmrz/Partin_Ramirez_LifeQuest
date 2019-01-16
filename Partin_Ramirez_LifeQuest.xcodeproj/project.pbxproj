@@ -17,6 +17,7 @@
 		0FF085C221EE592700C45ACB /* SocialLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF085C121EE592700C45ACB /* SocialLinkViewController.swift */; };
 		0FF085C621EF9A8E00C45ACB /* BlueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF085C521EF9A8E00C45ACB /* BlueTableViewCell.swift */; };
 		547B91A121EF97500034009B /* GoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547B91A021EF97500034009B /* GoalsViewController.swift */; };
+		547B91A521EFA4910034009B /* newItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547B91A421EFA4910034009B /* newItemViewController.swift */; };
 		5489740821E90A0700F94A39 /* GlobalFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489740721E90A0600F94A39 /* GlobalFile.swift */; };
 		54A98EFB21ED05BA0058A385 /* dailyTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A98EFA21ED05BA0058A385 /* dailyTaskViewController.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		0FF085C121EE592700C45ACB /* SocialLinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLinkViewController.swift; sourceTree = "<group>"; };
 		0FF085C521EF9A8E00C45ACB /* BlueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueTableViewCell.swift; sourceTree = "<group>"; };
 		547B91A021EF97500034009B /* GoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsViewController.swift; sourceTree = "<group>"; };
+		547B91A421EFA4910034009B /* newItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newItemViewController.swift; sourceTree = "<group>"; };
 		5489740721E90A0600F94A39 /* GlobalFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFile.swift; sourceTree = "<group>"; };
 		54A98EFA21ED05BA0058A385 /* dailyTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dailyTaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,6 +115,7 @@
 				0FD1149C21E52A25000BDBEC /* AppDelegate.swift */,
 				0FD1149E21E52A25000BDBEC /* ViewController.swift */,
 				0FD114A021E52A25000BDBEC /* Main.storyboard */,
+				547B91A421EFA4910034009B /* newItemViewController.swift */,
 				54A98EFA21ED05BA0058A385 /* dailyTaskViewController.swift */,
 				0FD114A321E52A26000BDBEC /* Assets.xcassets */,
 				0FD114A521E52A26000BDBEC /* LaunchScreen.storyboard */,
@@ -277,6 +280,7 @@
 				0FD1149D21E52A25000BDBEC /* AppDelegate.swift in Sources */,
 				0FF085C221EE592700C45ACB /* SocialLinkViewController.swift in Sources */,
 				547B91A121EF97500034009B /* GoalsViewController.swift in Sources */,
+				547B91A521EFA4910034009B /* newItemViewController.swift in Sources */,
 				0FF085C621EF9A8E00C45ACB /* BlueTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
