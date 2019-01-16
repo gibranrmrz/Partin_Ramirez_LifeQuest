@@ -10,7 +10,9 @@ import UIKit
 
 class BlueTableViewCell: UITableViewCell {
 
-
+    @IBOutlet weak var peripheralNameLabel: UILabel!
+    
+    @IBOutlet weak var RSSILabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
