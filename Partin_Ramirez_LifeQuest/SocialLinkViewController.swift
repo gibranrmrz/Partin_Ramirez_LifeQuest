@@ -24,7 +24,12 @@ class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "BlueCell", for: indexPath) as? BlueTableViewCell {
+            cell.peripheralNameLabel.text = "Testing 123"
+            cell.RSSILabel.text = "RSSI: -28"
+            return cell
+        }
+        return UITableViewCell()
     }
     
     func connectToDevice() {
@@ -62,7 +67,6 @@ class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     @IBAction func refreshTapped(_ sender: Any) {
-    
     }
     
     
