@@ -10,20 +10,15 @@ import UIKit
 
 class BlueTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var peripheralNameLabel: UILabel!
-    
-    @IBOutlet weak var RSSILabel: UILabel!
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-       
+        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        
+        // Configure the view for the selected state
     }
 
 }
