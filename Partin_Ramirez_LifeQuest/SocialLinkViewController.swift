@@ -67,6 +67,7 @@ class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     @IBAction func refreshTapped(_ sender: Any) {
+    socialTableView.reloadData()
     }
     
     
