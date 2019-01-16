@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K7Y-SI-rX0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K7Y-SI-rX0">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -71,7 +71,7 @@
             </objects>
             <point key="canvasLocation" x="902.89855072463774" y="132.88043478260872"/>
         </scene>
-        <!--Item-->
+        <!--Goals-->
         <scene sceneID="po4-GA-h5z">
             <objects>
                 <viewController id="ND4-nA-Zod" customClass="GoalsViewController" customModule="Partin_Ramirez_LifeQuest" customModuleProvider="target" sceneMemberID="viewController">
@@ -102,7 +102,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="cN4-DC-V2v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="JfK-ls-vuo"/>
+                    <tabBarItem key="tabBarItem" title="Goals" selectedImage="goal" id="JfK-ls-vuo"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nwM-DI-lRE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -254,6 +254,7 @@
     <resources>
         <image name="Sword_pixel_Rotated" width="480" height="480"/>
         <image name="bed" width="18.75" height="18.75"/>
+        <image name="goal" width="18.75" height="18.75"/>
         <image name="scroll-png-png-745x1024-scroll-with-no-background-745" width="745" height="1024"/>
     </resources>
 </document>
