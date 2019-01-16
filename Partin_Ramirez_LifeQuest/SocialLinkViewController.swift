@@ -11,7 +11,7 @@ import CoreBluetooth
 
 var blePeripheral: CBPeripheral?
 
-class SocialLinkViewController: UIViewController, UITableViewDelegate, CBCentralManagerDelegate, CBPeripheralDelegate {
+class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CBCentralManagerDelegate, CBPeripheralDelegate {
     
     var centralManager: CBCentralManager?
     var RSSIs = [NSNumber]()
@@ -20,12 +20,12 @@ class SocialLinkViewController: UIViewController, UITableViewDelegate, CBCentral
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 5
     }
     
-   // func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //return
-    //}
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return
+    }
     
     func connectToDevice() {
         centralManager?.connect(blePeripheral!, options: nil)
@@ -60,6 +60,13 @@ class SocialLinkViewController: UIViewController, UITableViewDelegate, CBCentral
             present(alertVC, animated: true, completion: nil)
         }
     }
+    
+    @IBAction func refreshTapped(_ sender: Any) {
+    
+    }
+    
+    
+    @IBOutlet weak var socialTableView: UITableView!
     
     
     
