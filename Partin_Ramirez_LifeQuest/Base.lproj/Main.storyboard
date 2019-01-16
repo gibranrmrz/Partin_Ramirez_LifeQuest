@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K7Y-SI-rX0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K7Y-SI-rX0">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -121,7 +121,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="99" id="2Qb-tF-7rr">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BlueCell" rowHeight="99" id="2Qb-tF-7rr" customClass="BlueTableViewCell" customModule="Partin_Ramirez_LifeQuest" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.333333333333343" width="414" height="99"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Qb-tF-7rr" id="hPG-iV-RYR">
@@ -144,6 +144,10 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="RSSILabel" destination="3mV-vF-MK6" id="wLN-gy-K9u"/>
+                                            <outlet property="peripheralNameLabel" destination="itB-YE-aZh" id="YpX-Yp-UAB"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -152,7 +156,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tkr-hR-ZNc">
-                                <rect key="frame" x="345" y="86" width="53" height="30"/>
+                                <rect key="frame" x="278" y="86" width="53" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Refresh"/>
                                 <connections>
@@ -163,7 +167,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="E54-p8-HBj"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="QHv-gp-EFv"/>
+                    <tabBarItem key="tabBarItem" title="Social Links" selectedImage="friend" id="QHv-gp-EFv"/>
                     <connections>
                         <outlet property="socialTableView" destination="Glg-5o-WTL" id="Rue-nB-nw8"/>
                     </connections>
@@ -254,6 +258,7 @@
     <resources>
         <image name="Sword_pixel_Rotated" width="480" height="480"/>
         <image name="bed" width="18.75" height="18.75"/>
+        <image name="friend" width="18.75" height="18.75"/>
         <image name="goal" width="18.75" height="18.75"/>
         <image name="scroll-png-png-745x1024-scroll-with-no-background-745" width="745" height="1024"/>
     </resources>
