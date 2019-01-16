@@ -141,7 +141,7 @@
             </objects>
             <point key="canvasLocation" x="3450.7246376811595" y="994.56521739130437"/>
         </scene>
-        <!--Item-->
+        <!--Daily Tasks-->
         <scene sceneID="cBc-Ja-bKZ">
             <objects>
                 <viewController id="QnV-b6-rYt" customClass="dailyTaskViewController" customModule="Partin_Ramirez_LifeQuest" customModuleProvider="target" sceneMemberID="viewController">
@@ -172,7 +172,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="lI2-bq-Qm8"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="rsv-aR-zYD"/>
+                    <tabBarItem key="tabBarItem" title="Daily Tasks" selectedImage="bed" id="rsv-aR-zYD"/>
                     <connections>
                         <outlet property="taskTableView" destination="KO4-Qj-0yC" id="4z4-UD-BF5"/>
                     </connections>
@@ -222,6 +222,7 @@
     </scenes>
     <resources>
         <image name="Sword_pixel_Rotated" width="480" height="480"/>
+        <image name="bed" width="18.75" height="18.75"/>
         <image name="scroll-png-png-745x1024-scroll-with-no-background-745" width="745" height="1024"/>
     </resources>
 </document>
