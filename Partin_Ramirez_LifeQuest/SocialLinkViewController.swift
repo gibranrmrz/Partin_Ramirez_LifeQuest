@@ -10,16 +10,17 @@ import UIKit
 import CoreBluetooth
 
 
-class SocialLinkViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CBCentralManagerDelegate {
+class SocialLinkViewController: UIViewController, UITableViewDelegate, CBCentralManagerDelegate {
     
     var centralManager: CBCentralManager?
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return 0
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
-    }
+   // func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //return
+    //}
     
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         if central.state == .poweredOn {
@@ -29,6 +30,7 @@ class SocialLinkViewController: UIViewController, UITableViewDataSource, UITable
            let okAction = UIAlertAction(title: "Ok", style: .default, handler: { (action) in alertVC.dismiss(animated: true, completion: nil)
            })
             alertVC.addAction(okAction)
+            present(alertVC, animated: true, completion: nil)
         }
     }
     
