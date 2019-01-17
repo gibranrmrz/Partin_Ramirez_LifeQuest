@@ -35,6 +35,8 @@ class dailyTaskViewController: UIViewController, UITableViewDataSource, UITableV
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         num = 1
     }
+    @IBAction func unwindToTask(unwindSegue: UIStoryboardSegue) {
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         //taskTableView.isEditing = true

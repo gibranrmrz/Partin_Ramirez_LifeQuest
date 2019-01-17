@@ -37,6 +37,8 @@ class GoalsViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         num = 2
     }
+    @IBAction func unwindToGoal(unwindSegue: UIStoryboardSegue) {
+    }
     /*
     // MARK: - Navigation
 
