@@ -25,7 +25,7 @@ class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "BlueCell", for: indexPath) as? BlueTableViewCell {
-            cell.peripheralNameLabel.text = "(\(peripherals)"
+            cell.peripheralNameLabel.text = "(\(bleName)"
             cell.RSSILabel.text = "RSSI: -28"
             return cell
         }
@@ -39,6 +39,7 @@ class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableVi
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         if let name = peripheral.name {
             print(print("Peripheral Name: \(name)"))
+            bleName = name
         }
         print("Peripheral UUID: \(peripheral.identifier.uuidString)")
         print("Peripheral RSSI: \(RSSI)")

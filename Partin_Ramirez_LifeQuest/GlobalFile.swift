@@ -8,6 +8,7 @@ let defaultlevel = 1
 
 var level = defaultlevel
 var currentXP = defaultXp
+var bleName = String()
 
 func levelUp(){
     if currentXP >= levelUpXP {
