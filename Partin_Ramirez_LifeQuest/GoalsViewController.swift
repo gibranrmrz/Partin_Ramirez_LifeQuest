@@ -33,7 +33,10 @@ class GoalsViewController: UIViewController, UITableViewDataSource, UITableViewD
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
         }
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        num = 2
+    }
     /*
     // MARK: - Navigation
 

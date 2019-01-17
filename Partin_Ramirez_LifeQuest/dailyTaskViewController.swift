@@ -11,7 +11,9 @@ import UIKit
 class dailyTaskViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var taskTableView: UITableView!
+    
     var taskArray: [Int] = [0, 1]
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return taskArray.count
     }
@@ -28,6 +30,10 @@ class dailyTaskViewController: UIViewController, UITableViewDataSource, UITableV
         } else {
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        num = 1
     }
     override func viewDidLoad() {
         super.viewDidLoad()
