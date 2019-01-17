@@ -10,13 +10,18 @@ import UIKit
 
 class newItemViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+    @IBOutlet weak var taskBarTitle: UINavigationItem!
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        switch num {
+        case 1:
+            taskBarTitle.title = "Add Task"
+        case 2:
+            taskBarTitle.title = "Add Goal"
+        default:
+            print("f")
+        }
+    }
     /*
     // MARK: - Navigation
 

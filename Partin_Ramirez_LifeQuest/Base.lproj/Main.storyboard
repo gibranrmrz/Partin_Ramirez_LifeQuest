@@ -252,11 +252,11 @@
             </objects>
             <point key="canvasLocation" x="3392.753623188406" y="132.88043478260872"/>
         </scene>
-        <!--View Controller-->
+        <!--New Item View Controller-->
         <scene sceneID="iYK-xF-6hz">
             <objects>
-                <viewController id="0o3-UN-EH4" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="p1w-bN-2YU">
+                <viewController id="0o3-UN-EH4" customClass="newItemViewController" customModule="Partin_Ramirez_LifeQuest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p1w-bN-2YU" customClass="newItemVi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -281,6 +281,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="teS-GL-0qp"/>
                     </view>
+                    <connections>
+                        <outlet property="taskBarTitle" destination="Io9-fR-8Gx" id="74S-OO-AHS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AWx-rb-7Jt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
