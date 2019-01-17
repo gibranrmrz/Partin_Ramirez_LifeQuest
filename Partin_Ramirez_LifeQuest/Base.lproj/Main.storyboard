@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -98,6 +98,19 @@
                                     <outlet property="delegate" destination="ND4-nA-Zod" id="MZb-6Z-F8C"/>
                                 </connections>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SUh-En-Hwd">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Goals" id="R4o-br-BIk">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="gf2-hm-KmI">
+                                            <connections>
+                                                <segue destination="0o3-UN-EH4" kind="show" id="dMs-wU-ZHy"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="cN4-DC-V2v"/>
@@ -203,6 +216,19 @@
                                     <outlet property="delegate" destination="QnV-b6-rYt" id="QZi-JZ-mK8"/>
                                 </connections>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rel-2e-5Re">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Daily Tasks" id="iqK-qx-K6E">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="qEz-9x-TJv">
+                                            <connections>
+                                                <segue destination="0o3-UN-EH4" kind="show" id="unJ-sF-i2t"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="lI2-bq-Qm8"/>
@@ -215,6 +241,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iGl-x6-0Hi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3392.753623188406" y="132.88043478260872"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="iYK-xF-6hz">
+            <objects>
+                <viewController id="0o3-UN-EH4" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p1w-bN-2YU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HEh-bb-wcb">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Add Task" id="Io9-fR-8Gx">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="85p-Kb-0Ew"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="HmO-WW-PU4"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W5y-rK-Sqb">
+                                <rect key="frame" x="20" y="160" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="teS-GL-0qp"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AWx-rb-7Jt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4231.884057971015" y="132.88043478260872"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="lpt-zL-9TC">
@@ -243,4 +303,7 @@
         <image name="goal" width="18.75" height="18.75"/>
         <image name="scroll-png-png-745x1024-scroll-with-no-background-745" width="745" height="1024"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="dMs-wU-ZHy"/>
+    </inferredMetricsTieBreakers>
 </document>
