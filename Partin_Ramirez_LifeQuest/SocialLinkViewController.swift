@@ -25,7 +25,7 @@ class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "BlueCell", for: indexPath) as? BlueTableViewCell {
-            cell.peripheralNameLabel.text = "Testing 123"
+            cell.peripheralNameLabel.text = "(\(peripherals)"
             cell.RSSILabel.text = "RSSI: -28"
             return cell
         }
