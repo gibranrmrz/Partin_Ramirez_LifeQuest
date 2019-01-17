@@ -11,6 +11,7 @@ import UIKit
 class newItemViewController: UIViewController {
 
     @IBOutlet weak var taskBarTitle: UINavigationItem!
+    @IBOutlet weak var nameField: UITextField!
     
     override func viewWillAppear(_ animated: Bool) {
         switch num {
@@ -18,10 +19,30 @@ class newItemViewController: UIViewController {
             taskBarTitle.title = "Add Task"
         case 2:
             taskBarTitle.title = "Add Goal"
+        case 3:
+            taskBarTitle.title = "Add Social Link"
         default:
             print("f")
         }
     }
+    
+    @IBAction func donePressed(_ sender: Any) {
+        guard let safeName = nameField.text else {return}
+        switch num {
+        case 1:
+            let newTask = Task(title: safeName, completed: false)
+            theTaskArray.append(newTask)
+        case 2:
+            let newGoal = Goal(title: safeName, done: false)
+            theGoalArray.append(newGoal)
+        case 3:
+            let newLink = SocialLink(name: safeName, met: false)
+            theLinkArray.append(newLink)
+        default:
+            print("f")
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

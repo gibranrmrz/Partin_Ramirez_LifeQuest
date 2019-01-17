@@ -11,6 +11,9 @@ var currentXP = defaultXp
 var bleName = String()
 
 var num = 1
+var theTaskArray: [Task] = []
+var theGoalArray: [Goal] = []
+var theLinkArray: [SocialLink] = []
 
 func levelUp(){
     if currentXP >= levelUpXP {
@@ -23,8 +26,11 @@ struct Task {
     var title: String
     var completed : Bool
 }
-
-struct socialLink {
+struct Goal {
+    var title: String
+    var done: Bool
+}
+struct SocialLink {
     var name: String
     var met: Bool
 }
