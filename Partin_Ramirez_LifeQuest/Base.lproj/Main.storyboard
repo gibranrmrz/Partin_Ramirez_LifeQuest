@@ -266,7 +266,11 @@
                                 <items>
                                     <navigationItem title="Add Task" id="Io9-fR-8Gx">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="85p-Kb-0Ew"/>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="HmO-WW-PU4"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="HmO-WW-PU4">
+                                            <connections>
+                                                <action selector="donePressed:" destination="0o3-UN-EH4" id="QQS-0M-aEe"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -282,6 +286,7 @@
                         <viewLayoutGuide key="safeArea" id="teS-GL-0qp"/>
                     </view>
                     <connections>
+                        <outlet property="nameField" destination="W5y-rK-Sqb" id="Hmy-uk-yZf"/>
                         <outlet property="taskBarTitle" destination="Io9-fR-8Gx" id="74S-OO-AHS"/>
                     </connections>
                 </viewController>
