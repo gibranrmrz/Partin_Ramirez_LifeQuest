@@ -20,7 +20,7 @@ class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableVi
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -30,6 +30,9 @@ class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableVi
             return cell
         }
         return UITableViewCell()
+        
+        
+    
     }
     
     func connectToDevice() {
