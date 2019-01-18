@@ -26,6 +26,18 @@ class newItemViewController: UIViewController {
         }
     }
     
+    @IBAction func cancelPressed(_ sender: UIBarButtonItem) {
+        switch num {
+        case 1:
+            performSegue(withIdentifier: "unwindToTask", sender: self)
+        case 2:
+            performSegue(withIdentifier: "unwindToGoal", sender: self)
+        case 3:
+            performSegue(withIdentifier: "unwindToLink", sender: self)
+        default:
+            print("f")
+        }
+    }
     @IBAction func donePressed(_ sender: Any) {
         guard let safeName = nameField.text else {return}
         guard safeName != "" else {return}
@@ -33,7 +45,6 @@ class newItemViewController: UIViewController {
         case 1:
             let newTask = Task(title: safeName, completed: false)
             theTaskArray.append(newTask)
-            print("nice")
             performSegue(withIdentifier: "unwindToTask", sender: self)
         case 2:
             let newGoal = Goal(title: safeName, done: false)
