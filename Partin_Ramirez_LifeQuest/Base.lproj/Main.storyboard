@@ -188,6 +188,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Social Links" selectedImage="friend" id="QHv-gp-EFv"/>
                     <connections>
+                        <outlet property="doneButton" destination="w6Z-Dr-Dx8" id="Rdm-oS-TpR"/>
                         <outlet property="socialTableView" destination="Glg-5o-WTL" id="Rue-nB-nw8"/>
                     </connections>
                 </viewController>

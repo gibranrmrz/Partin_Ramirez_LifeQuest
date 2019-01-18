@@ -22,6 +22,10 @@ class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableVi
     var peripherals = [CBPeripheral]()
     var peripheralUUIDsFound = NSMutableSet()
     
+    @IBOutlet weak var socialTableView: UITableView!
+    @IBOutlet weak var doneButton: UIBarButtonItem!
+    
+    // Table View  Stuff
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return names.count
@@ -77,7 +81,6 @@ class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     @IBAction func refreshTapped(_ sender: Any) {
-    //socialTableView.reloadData()
     startScan()
     }
     
@@ -90,7 +93,7 @@ class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableVi
         centralManager?.scanForPeripherals(withServices: nil, options: nil)
     }
     
-    @IBOutlet weak var socialTableView: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
