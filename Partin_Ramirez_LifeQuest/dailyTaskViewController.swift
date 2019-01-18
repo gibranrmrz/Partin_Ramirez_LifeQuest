@@ -21,14 +21,21 @@ class dailyTaskViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let ourCellsTest = tableView.dequeueReusableCell(withIdentifier: "dailyCell1", for: indexPath)
         ourCellsTest.textLabel?.text = theTaskArray[indexPath.row].title
+        if theTaskArray[indexPath.row].completed {
+            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
+        } else {
+            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
+        }
         return ourCellsTest
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView.cellForRow(at: indexPath)?.accessoryType != UITableViewCell.AccessoryType.checkmark {
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
+            theTaskArray[indexPath.row].completed = true
         } else {
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
+            theTaskArray[indexPath.row].completed = false
         }
     }
     
@@ -39,13 +46,8 @@ class dailyTaskViewController: UIViewController, UITableViewDataSource, UITableV
     }
     override func viewWillAppear(_ animated: Bool) {
         taskTableView.reloadData()
+        
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        //taskTableView.isEditing = true
-        // Do any additional setup after loading the view.
-    }
-    
     
     /*
     // MARK: - Navigation

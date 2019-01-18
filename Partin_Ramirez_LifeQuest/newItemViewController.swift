@@ -28,6 +28,7 @@ class newItemViewController: UIViewController {
     
     @IBAction func donePressed(_ sender: Any) {
         guard let safeName = nameField.text else {return}
+        guard safeName != "" else {return}
         switch num {
         case 1:
             let newTask = Task(title: safeName, completed: false)
