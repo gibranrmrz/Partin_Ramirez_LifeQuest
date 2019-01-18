@@ -10,6 +10,9 @@ import UIKit
 import CoreBluetooth
 
 var blePeripheral: CBPeripheral?
+//let iPhoneServiceCBUUID = CBUUID(string: "6622B0F9960369649A124F844E0DAB31C91BCB0B")
+var names: [String] = []
+var RSSIs: [NSNumber] = []
 
 class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CBCentralManagerDelegate, CBPeripheralDelegate {
     
@@ -20,13 +23,13 @@ class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableVi
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return names.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "BlueCell", for: indexPath) as? BlueTableViewCell {
-            cell.peripheralNameLabel.text = "(\(bleName)"
-            cell.RSSILabel.text = "RSSI: -28"
+            cell.peripheralNameLabel.text = names[indexPath.row]
+            cell.RSSILabel.text = "RSSI: \(RSSIs[indexPath.row])"
             return cell
         }
         return UITableViewCell()
@@ -41,24 +44,18 @@ class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         if let name = peripheral.name {
-            print(print("Peripheral Name: \(name)"))
-            bleName = name
+            names.append(name)
+        } else {
+            names.append(peripheral.identifier.uuidString)
         }
-        print("Peripheral UUID: \(peripheral.identifier.uuidString)")
-        print("Peripheral RSSI: \(RSSI)")
-        print("Ad Data: \(advertisementData)")
-        
-        print("**********")
-        self.peripherals.append(peripheral)
-        self.RSSIs.append(RSSI)
-        peripheral.delegate = self
-        blePeripheral = peripheral
+        RSSIs.append(RSSI)
+        socialTableView.reloadData()
     }
     
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         if central.state == .poweredOn {
             //If bluetooh is working
-            central.scanForPeripherals(withServices: nil, options: nil)
+            startScan()
             
         } else {
        //If bluetooth is not working
@@ -71,9 +68,17 @@ class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     @IBAction func refreshTapped(_ sender: Any) {
-    socialTableView.reloadData()
+    //socialTableView.reloadData()
+    startScan()
     }
     
+    func startScan() {
+        names = []
+        RSSIs = []
+        socialTableView.reloadData()
+        centralManager?.stopScan()
+        centralManager?.scanForPeripherals(withServices: nil /*[iPhoneServiceCBUUID]*/, options: nil)
+    }
     
     @IBOutlet weak var socialTableView: UITableView!
     
