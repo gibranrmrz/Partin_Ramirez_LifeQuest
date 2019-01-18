@@ -14,6 +14,7 @@ var blePeripheral: CBPeripheral?
 var names: [String] = []
 var RSSIs: [NSNumber] = []
 
+
 class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CBCentralManagerDelegate, CBPeripheralDelegate {
     
     var centralManager: CBCentralManager?
@@ -33,10 +34,14 @@ class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableVi
             return cell
         }
         return UITableViewCell()
-        
-        
-    
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        blePeripheral = peripherals[indexPath.row]
+        connectToDevice()
+    }
+    
+    // Core Bluetooth stuff below
     
     func connectToDevice() {
         centralManager?.connect(blePeripheral!, options: nil)
@@ -49,12 +54,16 @@ class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableVi
             names.append(peripheral.identifier.uuidString)
         }
         RSSIs.append(RSSI)
+        peripherals.append(peripheral)
+        /*if peripherals.isEmpty == false {
+            print(peripherals)
+        }*/
         socialTableView.reloadData()
     }
     
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         if central.state == .poweredOn {
-            //If bluetooh is working
+            //If bluetooth is working
             startScan()
             
         } else {
@@ -75,9 +84,10 @@ class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableVi
     func startScan() {
         names = []
         RSSIs = []
+        peripherals = []
         socialTableView.reloadData()
         centralManager?.stopScan()
-        centralManager?.scanForPeripherals(withServices: nil /*[iPhoneServiceCBUUID]*/, options: nil)
+        centralManager?.scanForPeripherals(withServices: nil, options: nil)
     }
     
     @IBOutlet weak var socialTableView: UITableView!
