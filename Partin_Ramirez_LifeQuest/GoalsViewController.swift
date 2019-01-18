@@ -15,14 +15,14 @@ class GoalsViewController: UIViewController, UITableViewDataSource, UITableViewD
 
         // Do any additional setup after loading the view.
     }
-    var goalArray: [Int] = [0, 1]
+    //var goalArray: [Int] = [0, 1]
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return goalArray.count
+        return theGoalArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let ourCellsTest = tableView.dequeueReusableCell(withIdentifier: "goalCell1", for: indexPath)
-        ourCellsTest.textLabel?.text = "\(goalArray[indexPath.row])"
+        ourCellsTest.textLabel?.text = theGoalArray[indexPath.row].title
         return ourCellsTest
     }
     

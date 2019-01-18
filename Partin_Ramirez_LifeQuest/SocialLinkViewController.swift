@@ -92,11 +92,6 @@ class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBOutlet weak var socialTableView: UITableView!
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        num = 3
-    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         centralManager = CBCentralManager(delegate: self, queue: nil)
