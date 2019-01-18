@@ -1,29 +1,30 @@
 //
-//  dailyTaskViewController.swift
+//  linkDisplayViewController.swift
 //  Partin_Ramirez_LifeQuest
 //
-//  Created by Period Three on 2019-01-14.
+//  Created by Period Three on 2019-01-18.
 //  Copyright © 2019 Gibran Ramirez. All rights reserved.
 //
 
 import UIKit
 
-class dailyTaskViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
-    @IBOutlet weak var taskTableView: UITableView!
-    
-    //var taskArray: [Int] = [0, 1]
-    
+class linkDisplayViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return theTaskArray.count
+        return theLinkArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let ourCellsTest = tableView.dequeueReusableCell(withIdentifier: "dailyCell1", for: indexPath)
-        ourCellsTest.textLabel?.text = theTaskArray[indexPath.row].title
+        let ourCellsTest = tableView.dequeueReusableCell(withIdentifier: "linkCell1", for: indexPath)
+        ourCellsTest.textLabel?.text = "\(theLinkArray[indexPath.row].name)"
         return ourCellsTest
     }
     
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView.cellForRow(at: indexPath)?.accessoryType != UITableViewCell.AccessoryType.checkmark {
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
@@ -31,22 +32,10 @@ class dailyTaskViewController: UIViewController, UITableViewDataSource, UITableV
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
         }
     }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        num = 1
+        num = 3
     }
-    @IBAction func unwindToTask(unwindSegue: UIStoryboardSegue) {
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        taskTableView.reloadData()
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        //taskTableView.isEditing = true
-        // Do any additional setup after loading the view.
-    }
-    
-    
+    @IBAction func unwindToLink(unwindSegue: UIStoryboardSegue) {}
     /*
     // MARK: - Navigation
 

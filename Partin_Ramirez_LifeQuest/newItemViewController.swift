@@ -32,14 +32,16 @@ class newItemViewController: UIViewController {
         case 1:
             let newTask = Task(title: safeName, completed: false)
             theTaskArray.append(newTask)
+            print("nice")
             performSegue(withIdentifier: "unwindToTask", sender: self)
         case 2:
             let newGoal = Goal(title: safeName, done: false)
             theGoalArray.append(newGoal)
+            performSegue(withIdentifier: "unwindToGoal", sender: self)
         case 3:
             let newLink = SocialLink(name: safeName, met: false)
             theLinkArray.append(newLink)
-            performSegue(withIdentifier: "unwindToGoal", sender: self)
+            performSegue(withIdentifier: "unwindToLink", sender: self)
         default:
             print("f")
         }

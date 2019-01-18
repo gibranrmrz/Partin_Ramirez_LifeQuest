@@ -20,6 +20,7 @@
 		547B91A521EFA4910034009B /* newItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547B91A421EFA4910034009B /* newItemViewController.swift */; };
 		5489740821E90A0700F94A39 /* GlobalFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489740721E90A0600F94A39 /* GlobalFile.swift */; };
 		54A98EFB21ED05BA0058A385 /* dailyTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A98EFA21ED05BA0058A385 /* dailyTaskViewController.swift */; };
+		54D89E9121F238E200A32AC6 /* linkDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D89E9021F238E200A32AC6 /* linkDisplayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		547B91A421EFA4910034009B /* newItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newItemViewController.swift; sourceTree = "<group>"; };
 		5489740721E90A0600F94A39 /* GlobalFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFile.swift; sourceTree = "<group>"; };
 		54A98EFA21ED05BA0058A385 /* dailyTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dailyTaskViewController.swift; sourceTree = "<group>"; };
+		54D89E9021F238E200A32AC6 /* linkDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = linkDisplayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				0FD1149C21E52A25000BDBEC /* AppDelegate.swift */,
 				0FD1149E21E52A25000BDBEC /* ViewController.swift */,
 				0FD114A021E52A25000BDBEC /* Main.storyboard */,
+				54D89E9021F238E200A32AC6 /* linkDisplayViewController.swift */,
 				547B91A421EFA4910034009B /* newItemViewController.swift */,
 				54A98EFA21ED05BA0058A385 /* dailyTaskViewController.swift */,
 				0FD114A321E52A26000BDBEC /* Assets.xcassets */,
@@ -282,6 +285,7 @@
 				547B91A121EF97500034009B /* GoalsViewController.swift in Sources */,
 				547B91A521EFA4910034009B /* newItemViewController.swift in Sources */,
 				0FF085C621EF9A8E00C45ACB /* BlueTableViewCell.swift in Sources */,
+				54D89E9121F238E200A32AC6 /* linkDisplayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
