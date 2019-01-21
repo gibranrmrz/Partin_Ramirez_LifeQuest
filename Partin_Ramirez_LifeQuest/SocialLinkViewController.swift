@@ -77,10 +77,11 @@ class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableVi
     
     
     @IBAction func DoneTapped(_ sender: Any) {
-        guard blePeripheral == nil else { return }
-        centralManager?.cancelPeripheralConnection(blePeripheral!)
-            print(blePeripheral!)
-            performSegue(withIdentifier: "unwindToLink", sender: self)
+        if let safeblePeripheral = blePeripheral {
+            centralManager?.cancelPeripheralConnection(safeblePeripheral)
+            print(safeblePeripheral)
+        }
+        performSegue(withIdentifier: "unwindToLink", sender: self)
     }
     
     @IBAction func refreshTapped(_ sender: Any) {
