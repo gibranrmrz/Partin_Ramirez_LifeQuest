@@ -184,6 +184,7 @@
                                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="w6Z-Dr-Dx8">
                                             <connections>
                                                 <action selector="DoneTapped:" destination="yxR-z3-m4k" id="UaI-8K-fa2"/>
+                                                <segue destination="BWa-N0-DCG" kind="unwind" unwindAction="unwindToLinkWithUnwindSegue:" id="uxC-4r-3LJ"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -199,6 +200,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6qQ-KM-6bw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="BWa-N0-DCG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3393" y="995"/>
         </scene>
@@ -388,6 +390,6 @@
         <image name="scroll-png-png-745x1024-scroll-with-no-background-745" width="745" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Rib-Af-Jn5"/>
+        <segue reference="dMs-wU-ZHy"/>
     </inferredMetricsTieBreakers>
 </document>
