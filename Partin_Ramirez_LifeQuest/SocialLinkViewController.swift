@@ -1,10 +1,3 @@
-//
-//  SocialLinkViewController.swift
-//  Partin_Ramirez_LifeQuest
-//
-//  Created by Gibran Ramirez on 2019-01-15.
-//  Copyright © 2019 Gibran Ramirez. All rights reserved.
-//
 
 import UIKit
 import CoreBluetooth
@@ -43,7 +36,7 @@ class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableVi
         blePeripheral = peripherals[indexPath.row]
         connectToDevice()
         if blePeripheral == peripherals[indexPath.row] {
-            currentXP += 300
+            currentXP += 1000
         }
     }
     
