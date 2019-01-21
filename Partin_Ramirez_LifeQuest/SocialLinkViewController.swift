@@ -36,7 +36,7 @@ class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableVi
         blePeripheral = peripherals[indexPath.row]
         connectToDevice()
         if blePeripheral == peripherals[indexPath.row] {
-            currentXP += 1000
+            currentXP += 500
         }
     }
     
@@ -44,6 +44,7 @@ class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func connectToDevice() {
         centralManager?.connect(blePeripheral!, options: nil)
+        print(blePeripheral!)
     }
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
