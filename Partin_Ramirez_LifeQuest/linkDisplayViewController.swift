@@ -29,11 +29,7 @@ class linkDisplayViewController: UIViewController, UITableViewDataSource, UITabl
         // Do any additional setup after loading the view.
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if tableView.cellForRow(at: indexPath)?.accessoryType != UITableViewCell.AccessoryType.checkmark {
-            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
-        } else {
-            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
-        }
+        performSegue(withIdentifier: "goToBluetooth", sender: self)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         num = 3

@@ -195,7 +195,6 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Social Links" selectedImage="friend" id="QHv-gp-EFv"/>
                     <connections>
-                        <outlet property="doneButton" destination="w6Z-Dr-Dx8" id="Rdm-oS-TpR"/>
                         <outlet property="socialTableView" destination="Glg-5o-WTL" id="Rue-nB-nw8"/>
                     </connections>
                 </viewController>
@@ -250,6 +249,7 @@
                     <tabBarItem key="tabBarItem" title="Social Links" selectedImage="friend" id="Nv9-FS-dkP"/>
                     <connections>
                         <outlet property="linkTableView" destination="goq-rC-LWs" id="l3p-Zg-BEB"/>
+                        <segue destination="yxR-z3-m4k" kind="show" identifier="goToBluetooth" id="V5M-6W-ZKy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JdU-Kh-wnT" userLabel="First Responder" sceneMemberID="firstResponder"/>
