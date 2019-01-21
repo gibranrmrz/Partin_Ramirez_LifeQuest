@@ -178,7 +178,11 @@
                                                 <action selector="refreshTapped:" destination="yxR-z3-m4k" id="H9G-Vj-dAe"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="w6Z-Dr-Dx8"/>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="w6Z-Dr-Dx8">
+                                            <connections>
+                                                <action selector="DoneTapped:" destination="yxR-z3-m4k" id="UaI-8K-fa2"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
