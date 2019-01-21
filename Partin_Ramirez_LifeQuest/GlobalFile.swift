@@ -15,7 +15,8 @@ var theTaskArray: [Task] = []
 var theGoalArray: [Goal] = []
 var theLinkArray: [SocialLink] = []
 
-func levelUp(){
+func levelUp(gained: Int){
+    currentXP += gained
     if currentXP >= levelUpXP {
         level += 1
         currentXP -= 500

@@ -33,9 +33,11 @@ class dailyTaskViewController: UIViewController, UITableViewDataSource, UITableV
         if tableView.cellForRow(at: indexPath)?.accessoryType != UITableViewCell.AccessoryType.checkmark {
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
             theTaskArray[indexPath.row].completed = true
+            levelUp(gained: 100)
         } else {
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
             theTaskArray[indexPath.row].completed = false
+            levelUp(gained: -100)
         }
     }
     
