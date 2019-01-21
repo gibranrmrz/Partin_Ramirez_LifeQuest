@@ -9,6 +9,9 @@
 import UIKit
 
 class linkDisplayViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    
+    @IBOutlet weak var linkTableView: UITableView!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return theLinkArray.count
     }
@@ -36,6 +39,9 @@ class linkDisplayViewController: UIViewController, UITableViewDataSource, UITabl
         num = 3
     }
     @IBAction func unwindToLink(unwindSegue: UIStoryboardSegue) {}
+    override func viewWillAppear(_ animated: Bool) {
+        linkTableView.reloadData()
+    }
     /*
     // MARK: - Navigation
 

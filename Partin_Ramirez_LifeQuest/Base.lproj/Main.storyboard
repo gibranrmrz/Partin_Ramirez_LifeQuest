@@ -116,6 +116,9 @@
                         <viewLayoutGuide key="safeArea" id="cN4-DC-V2v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Goals" selectedImage="goal" id="JfK-ls-vuo"/>
+                    <connections>
+                        <outlet property="goalTableView" destination="we1-Tt-gIF" id="Vtz-Q1-zbC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nwM-DI-lRE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -221,7 +224,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="goq-rC-LWs" customClass="link">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="goq-rC-LWs">
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -245,6 +248,9 @@
                         <viewLayoutGuide key="safeArea" id="APk-ML-Oth"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Social Links" selectedImage="friend" id="Nv9-FS-dkP"/>
+                    <connections>
+                        <outlet property="linkTableView" destination="goq-rC-LWs" id="l3p-Zg-BEB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JdU-Kh-wnT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
