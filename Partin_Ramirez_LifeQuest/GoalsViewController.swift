@@ -12,7 +12,7 @@ class GoalsViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        levelBarOutlet.title = "Lvl: \(String(level))"
+        levelBarOutlet.title = "Lvl: \(String(thisUser.level))"
     }
     
     @IBOutlet weak var goalTableView: UITableView!
@@ -32,7 +32,7 @@ class GoalsViewController: UIViewController, UITableViewDataSource, UITableViewD
         if tableView.cellForRow(at: indexPath)?.accessoryType != UITableViewCell.AccessoryType.checkmark {
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
             levelUp(gained: 200)
-            levelBarOutlet.title = "Lvl: \(String(level))"
+            levelBarOutlet.title = "Lvl: \(String(thisUser.level))"
         } else {
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
             
@@ -56,12 +56,11 @@ class GoalsViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     @IBAction func levelButtonPressed(_ sender: Any) {
-        let lvlAlert = UIAlertController(title: "XP Needed to Level Up:", message: "\(levelUpXP - currentXP)", preferredStyle: .alert)
+        let lvlAlert = UIAlertController(title: "XP Needed to Level Up:", message: "\(levelUpXP - thisUser.currentXP)", preferredStyle: .alert)
         let okayAction = UIAlertAction(title: "Ok", style: .default, handler: { (action) in lvlAlert.dismiss(animated: true, completion: nil)
         })
         lvlAlert.addAction(okayAction)
         present(lvlAlert, animated: true, completion: nil)
     }
-    
 
 }

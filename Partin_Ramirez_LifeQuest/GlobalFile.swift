@@ -6,8 +6,8 @@ let levelUpXP = 500
 let defaultXp = 250
 let defaultlevel = 1
 
-var level = defaultlevel
-var currentXP = defaultXp
+//var level = defaultlevel
+//var currentXP = defaultXp
 var thisUser = User(level: defaultlevel, currentXP: defaultXp)
 var bleName = String()
 
@@ -17,10 +17,10 @@ var theGoalArray: [Goal] = []
 var theLinkArray: [SocialLink] = []
 
 func levelUp(gained: Int){
-    currentXP += gained
-    if currentXP >= levelUpXP {
-        level += 1
-        currentXP -= 500
+    thisUser.currentXP += gained
+    if thisUser.currentXP >= levelUpXP {
+        thisUser.level += 1
+        thisUser.currentXP -= 500
     }
 }
 
@@ -39,6 +39,16 @@ struct Goal: Codable {
 struct SocialLink: Codable {
     var name: String
     var met: Bool
+}
+
+func endOfDay() {
+    var dateComp: NSDateComponents = NSDateComponents()
+    dateComp.hour = 0
+    dateComp.minute = 0
+    dateComp.timeZone = NSTimeZone.system
+    
+    var calender: NSCalendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)!
+    //var date: ns
 }
 
 let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -61,9 +71,6 @@ func saveData() {
     
     let veryNewEncodedItem = try? pListEncoder.encode(thisUser)
     try? veryNewEncodedItem?.write(to: archiveURL4, options: .noFileProtection)
-    
-    //let extremleyNewEncodedItem = try? pListEncoder.encode(currentXP)
-    //try? extremleyNewEncodedItem?.write(to: archiveURL5, options: .noFileProtection)
 }
 
 func loadData() {
@@ -85,10 +92,5 @@ func loadData() {
         pListDecoder.decode(User.self, from: retrivedItemsData) {
         thisUser = decodedNotes
     }
-    /*if let retrivedItemsData = try? Data(contentsOf: archiveURL5), let decodedNotes = try?
-        pListDecoder.decode(Int.self, from: retrivedItemsData) {
-        currentXP = decodedNotes
-        print(level)
-    }*/
     print("this works")
 }

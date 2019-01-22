@@ -35,7 +35,7 @@ class dailyTaskViewController: UIViewController, UITableViewDataSource, UITableV
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
             theTaskArray[indexPath.row].completed = true
             levelUp(gained: 100)
-            lvlOutlet.title = "Lvl: \(String(level))"
+            lvlOutlet.title = "Lvl: \(String(thisUser.level))"
         } else {
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
             theTaskArray[indexPath.row].completed = false
@@ -56,7 +56,7 @@ class dailyTaskViewController: UIViewController, UITableViewDataSource, UITableV
     
     
     @IBAction func lvlButtonPressed(_ sender: Any) {
-        let lvlAlert = UIAlertController(title: "XP Needed to Level Up:", message: "\(levelUpXP - currentXP)", preferredStyle: .alert)
+        let lvlAlert = UIAlertController(title: "XP Needed to Level Up:", message: "\(levelUpXP - thisUser.currentXP)", preferredStyle: .alert)
         let okayAction = UIAlertAction(title: "Ok", style: .default, handler: { (action) in lvlAlert.dismiss(animated: true, completion: nil)
         })
         lvlAlert.addAction(okayAction)
@@ -74,7 +74,7 @@ class dailyTaskViewController: UIViewController, UITableViewDataSource, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        lvlOutlet.title = "Lvl: \(String(level))"
+        lvlOutlet.title = "Lvl: \(String(thisUser.level))"
     }
 
 }

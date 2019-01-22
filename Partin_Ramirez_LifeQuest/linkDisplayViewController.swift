@@ -27,7 +27,7 @@ class linkDisplayViewController: UIViewController, UITableViewDataSource, UITabl
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        levelOutlet.title = "Lvl: \(String(level))"
+        levelOutlet.title = "Lvl: \(String(thisUser.level))"
         // Do any additional setup after loading the view.
     }
     
@@ -41,7 +41,7 @@ class linkDisplayViewController: UIViewController, UITableViewDataSource, UITabl
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        levelOutlet.title = "Lvl: \(String(level))"
+        levelOutlet.title = "Lvl: \(String(thisUser.level))"
         
         performSegue(withIdentifier: "goToBluetooth", sender: self)
     }
@@ -56,7 +56,7 @@ class linkDisplayViewController: UIViewController, UITableViewDataSource, UITabl
    
     @IBAction func lvlTapped(_ sender: Any) {
     
-        let lvlAlert = UIAlertController(title: "XP Needed to Level Up:", message: "\(levelUpXP - currentXP)", preferredStyle: .alert)
+        let lvlAlert = UIAlertController(title: "XP Needed to Level Up:", message: "\(levelUpXP - thisUser.currentXP)", preferredStyle: .alert)
         let okayAction = UIAlertAction(title: "Ok", style: .default, handler: { (action) in lvlAlert.dismiss(animated: true, completion: nil)
         })
         lvlAlert.addAction(okayAction)
