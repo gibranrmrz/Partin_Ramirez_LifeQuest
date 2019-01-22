@@ -43,6 +43,13 @@ class dailyTaskViewController: UIViewController, UITableViewDataSource, UITableV
         }
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        theTaskArray.remove(at: indexPath.row)
+        taskTableView.deleteRows(at: [indexPath], with: .fade)
+        
+        //saveData()
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         num = 1
     }

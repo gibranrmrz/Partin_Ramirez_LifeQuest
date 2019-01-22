@@ -40,9 +40,11 @@ class GoalsViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        theTaskArray.remove(at: indexPath.row)
+        theGoalArray.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .fade)
     }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         num = 2
     }
