@@ -12,6 +12,8 @@ class linkDisplayViewController: UIViewController, UITableViewDataSource, UITabl
     
     
     @IBOutlet weak var linkTableView: UITableView!
+    @IBOutlet weak var levelOutlet: UIBarButtonItem!
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return theLinkArray.count
     }
@@ -25,12 +27,16 @@ class linkDisplayViewController: UIViewController, UITableViewDataSource, UITabl
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        levelOutlet.title = String(level)
         // Do any additional setup after loading the view.
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        levelOutlet.title = String(level)
+        
         performSegue(withIdentifier: "goToBluetooth", sender: self)
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         num = 3
     }

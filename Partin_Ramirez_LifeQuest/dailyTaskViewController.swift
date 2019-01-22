@@ -11,6 +11,7 @@ import UIKit
 class dailyTaskViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var taskTableView: UITableView!
+    @IBOutlet weak var lvlOutlet: UIBarButtonItem!
     
     //var taskArray: [Int] = [0, 1]
     
@@ -34,6 +35,7 @@ class dailyTaskViewController: UIViewController, UITableViewDataSource, UITableV
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
             theTaskArray[indexPath.row].completed = true
             levelUp(gained: 100)
+            lvlOutlet.title = String(level)
         } else {
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
             theTaskArray[indexPath.row].completed = false
@@ -63,14 +65,9 @@ class dailyTaskViewController: UIViewController, UITableViewDataSource, UITableV
         
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        lvlOutlet.title = String(level)
     }
-    */
 
 }

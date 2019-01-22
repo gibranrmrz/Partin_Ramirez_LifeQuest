@@ -12,11 +12,12 @@ class GoalsViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        levelBarOutlet.title = String(level)
     }
-    //var goalArray: [Int] = [0, 1]
+    
     @IBOutlet weak var goalTableView: UITableView!
+    @IBOutlet weak var levelBarOutlet: UIBarButtonItem!
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return theGoalArray.count
     }
@@ -31,6 +32,7 @@ class GoalsViewController: UIViewController, UITableViewDataSource, UITableViewD
         if tableView.cellForRow(at: indexPath)?.accessoryType != UITableViewCell.AccessoryType.checkmark {
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
             levelUp(gained: 200)
+            levelBarOutlet.title = String(level)
         } else {
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
             

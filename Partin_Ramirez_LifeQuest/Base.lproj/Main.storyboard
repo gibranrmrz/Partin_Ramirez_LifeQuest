@@ -116,11 +116,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Goals" id="R4o-br-BIk">
-                                        <barButtonItem key="leftBarButtonItem" title="Lvl: 5" id="8ey-Dj-oBM">
-                                            <connections>
-                                                <action selector="levelButtonPressed:" destination="ND4-nA-Zod" id="TfB-e8-FaM"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <barButtonItem key="leftBarButtonItem" title="Lvl: 5" id="8ey-Dj-oBM"/>
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="gf2-hm-KmI">
                                             <connections>
                                                 <segue destination="0o3-UN-EH4" kind="show" id="dMs-wU-ZHy"/>
@@ -136,6 +132,7 @@
                     <tabBarItem key="tabBarItem" title="Goals" selectedImage="goal" id="JfK-ls-vuo"/>
                     <connections>
                         <outlet property="goalTableView" destination="we1-Tt-gIF" id="Vtz-Q1-zbC"/>
+                        <outlet property="levelBarOutlet" destination="8ey-Dj-oBM" id="beT-Oj-kVG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nwM-DI-lRE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -273,6 +270,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Social Links" selectedImage="friend" id="Nv9-FS-dkP"/>
                     <connections>
+                        <outlet property="levelOutlet" destination="4bU-Oz-2XN" id="nHp-ek-qmI"/>
                         <outlet property="linkTableView" destination="goq-rC-LWs" id="l3p-Zg-BEB"/>
                         <segue destination="yxR-z3-m4k" kind="show" identifier="goToBluetooth" id="V5M-6W-ZKy"/>
                     </connections>
@@ -332,6 +330,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Daily Tasks" selectedImage="bed" id="rsv-aR-zYD"/>
                     <connections>
+                        <outlet property="lvlOutlet" destination="FuI-Uk-Kyo" id="JCr-Sx-kmR"/>
                         <outlet property="taskTableView" destination="KO4-Qj-0yC" id="Ssb-j8-78w"/>
                     </connections>
                 </viewController>
@@ -418,6 +417,6 @@
         <image name="scroll-png-png-745x1024-scroll-with-no-background-745" width="745" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="unJ-sF-i2t"/>
+        <segue reference="dMs-wU-ZHy"/>
     </inferredMetricsTieBreakers>
 </document>
