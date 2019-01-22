@@ -44,6 +44,18 @@ class dailyTaskViewController: UIViewController, UITableViewDataSource, UITableV
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         num = 1
     }
+    
+    
+    @IBAction func lvlButtonPressed(_ sender: Any) {
+        let lvlAlert = UIAlertController(title: "XP Needed to Level Up:", message: "\(levelUpXP - currentXP)", preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "Ok", style: .default, handler: { (action) in lvlAlert.dismiss(animated: true, completion: nil)
+        })
+        lvlAlert.addAction(okayAction)
+        present(lvlAlert, animated: true, completion: nil)
+    
+    }
+    
+    
     @IBAction func unwindToTask(unwindSegue: UIStoryboardSegue) {
     }
     override func viewWillAppear(_ animated: Bool) {

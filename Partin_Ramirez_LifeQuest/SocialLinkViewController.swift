@@ -100,6 +100,9 @@ class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableVi
     
     
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         centralManager = CBCentralManager(delegate: self, queue: nil)

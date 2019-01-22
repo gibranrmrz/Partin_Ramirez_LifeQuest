@@ -46,17 +46,18 @@ class GoalsViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     @IBAction func unwindToGoal(unwindSegue: UIStoryboardSegue) {
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         goalTableView.reloadData()
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func levelButtonPressed(_ sender: Any) {
+        let lvlAlert = UIAlertController(title: "XP Needed to Level Up:", message: "\(levelUpXP - currentXP)", preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "Ok", style: .default, handler: { (action) in lvlAlert.dismiss(animated: true, completion: nil)
+        })
+        lvlAlert.addAction(okayAction)
+        present(lvlAlert, animated: true, completion: nil)
     }
-    */
+    
 
 }

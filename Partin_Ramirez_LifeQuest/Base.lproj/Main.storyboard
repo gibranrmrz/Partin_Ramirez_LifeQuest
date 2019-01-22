@@ -116,7 +116,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Goals" id="R4o-br-BIk">
-                                        <barButtonItem key="leftBarButtonItem" title="Lvl: 5" id="8ey-Dj-oBM"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Lvl: 5" id="8ey-Dj-oBM">
+                                            <connections>
+                                                <action selector="levelButtonPressed:" destination="ND4-nA-Zod" id="TfB-e8-FaM"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="gf2-hm-KmI">
                                             <connections>
                                                 <segue destination="0o3-UN-EH4" kind="show" id="dMs-wU-ZHy"/>
@@ -231,7 +235,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Social Links" id="spk-Pm-VyK">
-                                        <barButtonItem key="leftBarButtonItem" title="Lvl: 5" id="4bU-Oz-2XN"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Lvl: 5" id="4bU-Oz-2XN">
+                                            <connections>
+                                                <action selector="lvlTapped:" destination="TN1-pB-CRE" id="tOn-qo-bfO"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="4wD-M0-DHX">
                                             <connections>
                                                 <segue destination="0o3-UN-EH4" kind="show" id="Rib-Af-Jn5"/>
@@ -305,7 +313,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Daily Tasks" id="iqK-qx-K6E">
-                                        <barButtonItem key="leftBarButtonItem" title="Lvl: 5" id="FuI-Uk-Kyo"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Lvl: 5" id="FuI-Uk-Kyo">
+                                            <connections>
+                                                <action selector="lvlButtonPressed:" destination="QnV-b6-rYt" id="vKk-sT-dlX"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="qEz-9x-TJv">
                                             <connections>
                                                 <segue destination="0o3-UN-EH4" kind="show" id="unJ-sF-i2t"/>
@@ -406,6 +418,6 @@
         <image name="scroll-png-png-745x1024-scroll-with-no-background-745" width="745" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dMs-wU-ZHy"/>
+        <segue reference="unJ-sF-i2t"/>
     </inferredMetricsTieBreakers>
 </document>
