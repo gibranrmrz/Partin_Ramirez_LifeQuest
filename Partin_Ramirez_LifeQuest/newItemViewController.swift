@@ -12,6 +12,10 @@ class newItemViewController: UIViewController {
 
     @IBOutlet weak var taskBarTitle: UINavigationItem!
     @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var taskSwitchOutlet: UISwitch!
+    @IBOutlet weak var taskDatePicker: UIDatePicker!
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         switch num {
@@ -58,15 +62,5 @@ class newItemViewController: UIViewController {
             print("f")
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

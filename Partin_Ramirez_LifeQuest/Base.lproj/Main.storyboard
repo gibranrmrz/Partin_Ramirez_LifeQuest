@@ -371,6 +371,24 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dpi-WF-kXj">
+                                <rect key="frame" x="18" y="276" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reminder?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GXp-zj-DWw">
+                                <rect key="frame" x="18" y="221" width="82" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Xd7-do-1cV">
+                                <rect key="frame" x="24" y="363" width="366" height="148"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="569875082.12974894">
+                                    <!--2019-01-22 18:38:02 +0000-->
+                                </date>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="teS-GL-0qp"/>
@@ -378,6 +396,8 @@
                     <connections>
                         <outlet property="nameField" destination="W5y-rK-Sqb" id="Hmy-uk-yZf"/>
                         <outlet property="taskBarTitle" destination="Io9-fR-8Gx" id="74S-OO-AHS"/>
+                        <outlet property="taskDatePicker" destination="Xd7-do-1cV" id="ao2-y8-8Ni"/>
+                        <outlet property="taskSwitchOutlet" destination="Dpi-WF-kXj" id="Ejx-y1-oBC"/>
                         <segue destination="4eo-jS-mMF" kind="unwind" identifier="unwindToGoal" unwindAction="unwindToGoalWithUnwindSegue:" id="O8v-Nz-bqu"/>
                         <segue destination="4eo-jS-mMF" kind="unwind" identifier="unwindToTask" unwindAction="unwindToTaskWithUnwindSegue:" id="T4J-KY-1ih"/>
                         <segue destination="4eo-jS-mMF" kind="unwind" identifier="unwindToLink" unwindAction="unwindToLinkWithUnwindSegue:" id="qHM-6R-aih"/>

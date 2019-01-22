@@ -13,6 +13,8 @@ class dailyTaskViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var taskTableView: UITableView!
     @IBOutlet weak var lvlOutlet: UIBarButtonItem!
     
+    
+    
     //var taskArray: [Int] = [0, 1]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
