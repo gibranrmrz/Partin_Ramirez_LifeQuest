@@ -55,10 +55,10 @@ func saveData() {
     try? evenNewerEncodedItem?.write(to: archiveURL3, options: .noFileProtection)
     
     let veryNewEncodedItem = try? pListEncoder.encode(level)
-    try? veryNewEncodedItem?.write(to: archiveURL3, options: .noFileProtection)
+    try? veryNewEncodedItem?.write(to: archiveURL4, options: .noFileProtection)
     
     let extremleyNewEncodedItem = try? pListEncoder.encode(currentXP)
-    try? extremleyNewEncodedItem?.write(to: archiveURL3, options: .noFileProtection)
+    try? extremleyNewEncodedItem?.write(to: archiveURL5, options: .noFileProtection)
 }
 
 func loadData() {
@@ -78,9 +78,12 @@ func loadData() {
     if let retrivedItemsData = try? Data(contentsOf: archiveURL4), let decodedNotes = try?
         pListDecoder.decode(Int.self, from: retrivedItemsData) {
         level = decodedNotes
+        print(level)
     }
     if let retrivedItemsData = try? Data(contentsOf: archiveURL5), let decodedNotes = try?
         pListDecoder.decode(Int.self, from: retrivedItemsData) {
         currentXP = decodedNotes
+        print(level)
     }
+    print("this works")
 }
