@@ -27,12 +27,12 @@ class linkDisplayViewController: UIViewController, UITableViewDataSource, UITabl
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        levelOutlet.title = String(level)
+        levelOutlet.title = "Lvl: \(String(level))"
         // Do any additional setup after loading the view.
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        levelOutlet.title = String(level)
+        levelOutlet.title = "Lvl: \(String(level))"
         
         performSegue(withIdentifier: "goToBluetooth", sender: self)
     }

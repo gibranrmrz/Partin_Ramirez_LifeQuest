@@ -35,7 +35,7 @@ class dailyTaskViewController: UIViewController, UITableViewDataSource, UITableV
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
             theTaskArray[indexPath.row].completed = true
             levelUp(gained: 100)
-            lvlOutlet.title = String(level)
+            lvlOutlet.title = "Lvl: \(String(level))"
         } else {
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
             theTaskArray[indexPath.row].completed = false
@@ -67,7 +67,7 @@ class dailyTaskViewController: UIViewController, UITableViewDataSource, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        lvlOutlet.title = String(level)
+        lvlOutlet.title = "Lvl: \(String(level))"
     }
 
 }

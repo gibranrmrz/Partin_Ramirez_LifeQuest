@@ -12,7 +12,7 @@ class GoalsViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        levelBarOutlet.title = String(level)
+        levelBarOutlet.title = "Lvl: \(String(level))"
     }
     
     @IBOutlet weak var goalTableView: UITableView!
@@ -32,7 +32,7 @@ class GoalsViewController: UIViewController, UITableViewDataSource, UITableViewD
         if tableView.cellForRow(at: indexPath)?.accessoryType != UITableViewCell.AccessoryType.checkmark {
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
             levelUp(gained: 200)
-            levelBarOutlet.title = String(level)
+            levelBarOutlet.title = "Lvl: \(String(level))"
         } else {
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
             
