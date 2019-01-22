@@ -30,6 +30,15 @@ class linkDisplayViewController: UIViewController, UITableViewDataSource, UITabl
         levelOutlet.title = "Lvl: \(String(level))"
         // Do any additional setup after loading the view.
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        theLinkArray.remove(at: indexPath.row)
+        linkTableView.deleteRows(at: [indexPath], with: .fade)
+        
+        //saveData()
+    }
+
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         levelOutlet.title = "Lvl: \(String(level))"
