@@ -8,6 +8,7 @@ let defaultlevel = 1
 
 var level = defaultlevel
 var currentXP = defaultXp
+var thisUser = User(level: defaultlevel, currentXP: defaultXp)
 var bleName = String()
 
 var num = 1
@@ -23,6 +24,10 @@ func levelUp(gained: Int){
     }
 }
 
+struct User: Codable {
+    var level: Int
+    var currentXP: Int
+}
 struct Task: Codable {
     var title: String
     var completed : Bool
@@ -41,7 +46,7 @@ let archiveURL = documentsDirectory.appendingPathComponent("notes_test").appendi
 let archiveURL2 = documentsDirectory.appendingPathComponent("notes_test").appendingPathExtension("plist2")
 let archiveURL3 = documentsDirectory.appendingPathComponent("notes_test").appendingPathExtension("plist3")
 let archiveURL4 = documentsDirectory.appendingPathComponent("notes_test").appendingPathExtension("plist4")
-let archiveURL5 = documentsDirectory.appendingPathComponent("notes_test").appendingPathExtension("plist5")
+//let archiveURL5 = documentsDirectory.appendingPathComponent("notes_test").appendingPathExtension("plist5")
 
 func saveData() {
     let pListEncoder = PropertyListEncoder()
@@ -54,11 +59,11 @@ func saveData() {
     let evenNewerEncodedItem = try? pListEncoder.encode(theLinkArray)
     try? evenNewerEncodedItem?.write(to: archiveURL3, options: .noFileProtection)
     
-    let veryNewEncodedItem = try? pListEncoder.encode(level)
+    let veryNewEncodedItem = try? pListEncoder.encode(thisUser)
     try? veryNewEncodedItem?.write(to: archiveURL4, options: .noFileProtection)
     
-    let extremleyNewEncodedItem = try? pListEncoder.encode(currentXP)
-    try? extremleyNewEncodedItem?.write(to: archiveURL5, options: .noFileProtection)
+    //let extremleyNewEncodedItem = try? pListEncoder.encode(currentXP)
+    //try? extremleyNewEncodedItem?.write(to: archiveURL5, options: .noFileProtection)
 }
 
 func loadData() {
@@ -74,16 +79,16 @@ func loadData() {
     if let retrivedItemsData = try? Data(contentsOf: archiveURL3), let decodedNotes = try?
         pListDecoder.decode(Array<SocialLink>.self, from: retrivedItemsData) {
         theLinkArray = decodedNotes
+        print("3 works")
     }
     if let retrivedItemsData = try? Data(contentsOf: archiveURL4), let decodedNotes = try?
-        pListDecoder.decode(Int.self, from: retrivedItemsData) {
-        level = decodedNotes
-        print(level)
+        pListDecoder.decode(User.self, from: retrivedItemsData) {
+        thisUser = decodedNotes
     }
-    if let retrivedItemsData = try? Data(contentsOf: archiveURL5), let decodedNotes = try?
+    /*if let retrivedItemsData = try? Data(contentsOf: archiveURL5), let decodedNotes = try?
         pListDecoder.decode(Int.self, from: retrivedItemsData) {
         currentXP = decodedNotes
         print(level)
-    }
+    }*/
     print("this works")
 }
