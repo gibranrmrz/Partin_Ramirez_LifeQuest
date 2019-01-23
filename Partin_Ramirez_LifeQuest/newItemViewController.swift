@@ -9,7 +9,7 @@
 import UIKit
 import UserNotifications
 
-class newItemViewController: UIViewController {
+class newItemViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var taskBarTitle: UINavigationItem!
     @IBOutlet weak var nameField: UITextField!
@@ -35,6 +35,12 @@ class newItemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in})
+        self.nameField.delegate = self
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        nameField.resignFirstResponder()
+        return true
     }
     
     @IBAction func cancelPressed(_ sender: UIBarButtonItem) {

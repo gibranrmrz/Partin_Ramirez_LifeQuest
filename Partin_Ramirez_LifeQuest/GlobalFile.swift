@@ -3,7 +3,7 @@ import Foundation
 
 
 let levelUpXP = 500
-let defaultXp = 250
+let defaultXp = 200
 let defaultlevel = 1
 
 //var level = defaultlevel
