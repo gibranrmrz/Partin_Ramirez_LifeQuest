@@ -10,9 +10,10 @@ import UIKit
 
 class linkDisplayViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    
     @IBOutlet weak var linkTableView: UITableView!
     @IBOutlet weak var levelOutlet: UIBarButtonItem!
+    
+    @IBOutlet weak var linkBarItem: UITabBarItem!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return theLinkArray.count
@@ -28,6 +29,7 @@ class linkDisplayViewController: UIViewController, UITableViewDataSource, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         levelOutlet.title = "Lvl: \(String(thisUser.level))"
+        linkBarItem.image = #imageLiteral(resourceName: "friend")
         // Do any additional setup after loading the view.
     }
     

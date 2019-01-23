@@ -13,6 +13,7 @@ class dailyTaskViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var taskTableView: UITableView!
     @IBOutlet weak var lvlOutlet: UIBarButtonItem!
     
+    @IBOutlet weak var dailyTabBar: UITabBarItem!
     
     
     //var taskArray: [Int] = [0, 1]
@@ -77,6 +78,7 @@ class dailyTaskViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         lvlOutlet.title = "Lvl: \(String(thisUser.level))"
+        dailyTabBar.image = #imageLiteral(resourceName: "bed")
     }
 
 }

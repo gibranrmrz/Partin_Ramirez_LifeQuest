@@ -116,8 +116,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="cN4-DC-V2v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Goals" selectedImage="goal" id="JfK-ls-vuo"/>
+                    <tabBarItem key="tabBarItem" title="Goals" image="goal" selectedImage="goal" id="JfK-ls-vuo"/>
                     <connections>
+                        <outlet property="goalBarItem" destination="JfK-ls-vuo" id="lB5-7y-FMa"/>
                         <outlet property="goalTableView" destination="we1-Tt-gIF" id="Vtz-Q1-zbC"/>
                         <outlet property="levelBarOutlet" destination="8ey-Dj-oBM" id="beT-Oj-kVG"/>
                     </connections>
@@ -255,9 +256,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="APk-ML-Oth"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Social Links" selectedImage="friend" id="Nv9-FS-dkP"/>
+                    <tabBarItem key="tabBarItem" title="Social Links" image="friend" selectedImage="friend" id="Nv9-FS-dkP"/>
                     <connections>
                         <outlet property="levelOutlet" destination="4bU-Oz-2XN" id="nHp-ek-qmI"/>
+                        <outlet property="linkBarItem" destination="Nv9-FS-dkP" id="v5c-bw-dQx"/>
                         <outlet property="linkTableView" destination="goq-rC-LWs" id="l3p-Zg-BEB"/>
                         <segue destination="yxR-z3-m4k" kind="show" identifier="goToBluetooth" id="V5M-6W-ZKy"/>
                     </connections>
@@ -315,8 +317,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="lI2-bq-Qm8"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Daily Tasks" selectedImage="bed" id="rsv-aR-zYD"/>
+                    <tabBarItem key="tabBarItem" title="Daily Tasks" image="bed" selectedImage="bed" id="rsv-aR-zYD"/>
                     <connections>
+                        <outlet property="dailyTabBar" destination="rsv-aR-zYD" id="VVz-UY-9rQ"/>
                         <outlet property="lvlOutlet" destination="FuI-Uk-Kyo" id="JCr-Sx-kmR"/>
                         <outlet property="taskTableView" destination="KO4-Qj-0yC" id="Ssb-j8-78w"/>
                     </connections>
@@ -424,6 +427,6 @@
         <image name="scroll-png-png-745x1024-scroll-with-no-background-745" width="745" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dMs-wU-ZHy"/>
+        <segue reference="unJ-sF-i2t"/>
     </inferredMetricsTieBreakers>
 </document>

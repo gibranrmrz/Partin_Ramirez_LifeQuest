@@ -9,14 +9,17 @@
 import UIKit
 
 class GoalsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        levelBarOutlet.title = "Lvl: \(String(thisUser.level))"
-    }
     
     @IBOutlet weak var goalTableView: UITableView!
     @IBOutlet weak var levelBarOutlet: UIBarButtonItem!
+    
+    @IBOutlet weak var goalBarItem: UITabBarItem!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        levelBarOutlet.title = "Lvl: \(String(thisUser.level))"
+        goalBarItem.image = #imageLiteral(resourceName: "goal")
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return theGoalArray.count
