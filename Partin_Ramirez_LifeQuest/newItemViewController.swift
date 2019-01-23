@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class newItemViewController: UIViewController {
 
@@ -15,6 +16,7 @@ class newItemViewController: UIViewController {
     @IBOutlet weak var taskSwitchOutlet: UISwitch!
     @IBOutlet weak var taskDatePicker: UIDatePicker!
     
+    var remindTime = Date()
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,6 +30,11 @@ class newItemViewController: UIViewController {
         default:
             print("f")
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in})
     }
     
     @IBAction func cancelPressed(_ sender: UIBarButtonItem) {
@@ -63,4 +70,31 @@ class newItemViewController: UIViewController {
         }
     }
 
+    func notifications(seconds: Double, repeats: Bool) {
+        let content = UNMutableNotificationContent()
+        guard let safeText = nameField.text else {return}
+        content.title = safeText
+        content.badge = 1
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: repeats)
+        let request = UNNotificationRequest(identifier: "studyTime", content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+    }
+    
+    func getMinutes() {
+        taskSwitchOutlet.isOn = true
+        remindTime = taskDatePicker.date
+        let components = Calendar.current.dateComponents([.hour, .minute], from: remindTime)
+        guard let hour = components.hour else {return}
+        guard let minute = components.minute else {return}
+        let minutes = Double((60 * hour) + minute)
+        notifications(seconds: (60 * minutes), repeats: false)
+    }
+    
+    
+    func cancel() {
+        taskSwitchOutlet.isOn = false
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+    }
+    
+    
 }
