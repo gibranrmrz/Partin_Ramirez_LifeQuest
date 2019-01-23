@@ -47,7 +47,7 @@ class newItemViewController: UIViewController {
         guard safeName != "" else {return}
         switch num {
         case 1:
-            let newTask = Task(title: safeName, completed: false)
+            let newTask = Task(title: safeName)
             theTaskArray.append(newTask)
             performSegue(withIdentifier: "unwindToTask", sender: self)
         case 2:

@@ -24,23 +24,23 @@ class dailyTaskViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let ourCellsTest = tableView.dequeueReusableCell(withIdentifier: "dailyCell1", for: indexPath)
         ourCellsTest.textLabel?.text = theTaskArray[indexPath.row].title
-        if theTaskArray[indexPath.row].completed {
+        /*if theTaskArray[indexPath.row].completed {
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
         } else {
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
-        }
+        }*/
         return ourCellsTest
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView.cellForRow(at: indexPath)?.accessoryType != UITableViewCell.AccessoryType.checkmark {
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
-            theTaskArray[indexPath.row].completed = true
+            //theTaskArray[indexPath.row].completed = true
             levelUp(gained: 100)
             lvlOutlet.title = "Lvl: \(String(thisUser.level))"
         } else {
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
-            theTaskArray[indexPath.row].completed = false
+            //theTaskArray[indexPath.row].completed = false
             levelUp(gained: -100)
         }
     }

@@ -30,7 +30,7 @@ struct User: Codable {
 }
 struct Task: Codable {
     var title: String
-    var completed : Bool
+    //var completed : Bool
 }
 struct Goal: Codable {
     var title: String
@@ -39,16 +39,6 @@ struct Goal: Codable {
 struct SocialLink: Codable {
     var name: String
     var met: Bool
-}
-
-func endOfDay() {
-    var dateComp: NSDateComponents = NSDateComponents()
-    dateComp.hour = 0
-    dateComp.minute = 0
-    dateComp.timeZone = NSTimeZone.system
-    
-    var calender: NSCalendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)!
-    //var date: ns
 }
 
 let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
