@@ -36,7 +36,7 @@ class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableVi
         blePeripheral = peripherals[indexPath.row]
         connectToDevice()
         if blePeripheral == peripherals[indexPath.row] {
-            thisUser.currentXP += 500
+            levelUp(gained: 500)
         }
     }
     
