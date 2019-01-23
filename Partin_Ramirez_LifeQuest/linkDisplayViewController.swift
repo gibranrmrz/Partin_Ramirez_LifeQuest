@@ -40,9 +40,6 @@ class linkDisplayViewController: UIViewController, UITableViewDataSource, UITabl
 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        levelOutlet.title = "Lvl: \(String(thisUser.level))"
-        
         performSegue(withIdentifier: "goToBluetooth", sender: self)
     }
     
@@ -51,6 +48,7 @@ class linkDisplayViewController: UIViewController, UITableViewDataSource, UITabl
     }
     @IBAction func unwindToLink(unwindSegue: UIStoryboardSegue) {}
     override func viewWillAppear(_ animated: Bool) {
+        levelOutlet.title = "Lvl: \(String(thisUser.level))"
         linkTableView.reloadData()
     }
    
