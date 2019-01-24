@@ -9,6 +9,7 @@ var RSSIs: [NSNumber] = []
 
 class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CBCentralManagerDelegate, CBPeripheralDelegate {
     
+    // Variables needed to do Core Bluetooth
     var centralManager: CBCentralManager?
     var RSSIs = [NSNumber]()
     var peripherals = [CBPeripheral]()
@@ -18,19 +19,21 @@ class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableVi
     
     // Table View  Stuff
     
+    // Show a number of rows depending on many Bluetooth devices are found
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return names.count
     }
     
+    // Displays the names of the devices in table view cells
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "BlueCell", for: indexPath) as? BlueTableViewCell {
             cell.peripheralNameLabel.text = names[indexPath.row]
-            //cell.RSSILabel.text = "RSSI: \(RSSIs[indexPath.row])"
             return cell
         }
         return UITableViewCell()
     }
     
+    // When a device is selected in the table view connect to it and gain a level (500XP)
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         blePeripheral = peripherals[indexPath.row]
         connectToDevice()
@@ -41,11 +44,18 @@ class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableVi
     
     // Core Bluetooth stuff below
     
+    // function to connnect to a device and show an alert
     func connectToDevice() {
         centralManager?.connect(blePeripheral!, options: nil)
         print(blePeripheral!)
+        let connectAlert = UIAlertController(title: "Connected!", message: "Awarded 500XP", preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in connectAlert.dismiss(animated: true, completion: nil)
+        })
+     connectAlert.addAction(okayAction)
+        present(connectAlert, animated: true, completion: nil)
     }
     
+    // Find
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         if let name = peripheral.name {
             names.append(name)
@@ -54,9 +64,6 @@ class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableVi
         }
         RSSIs.append(RSSI)
         peripherals.append(peripheral)
-        /*if peripherals.isEmpty == false {
-            print(peripherals)
-        }*/
         socialTableView.reloadData()
     }
     
