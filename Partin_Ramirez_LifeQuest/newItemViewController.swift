@@ -11,14 +11,16 @@ import UserNotifications
 
 class newItemViewController: UIViewController, UITextFieldDelegate {
 
+    // Outlets
     @IBOutlet weak var taskBarTitle: UINavigationItem!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var taskSwitchOutlet: UISwitch!
     @IBOutlet weak var taskDatePicker: UIDatePicker!
     
+    // Variables
     var remindTime = Date()
     
-    
+    // Sets the titles of bar titles depending on the tab
     override func viewWillAppear(_ animated: Bool) {
         switch num {
         case 1:
@@ -32,6 +34,7 @@ class newItemViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    // Defaults reminder switch to off, requests notifications, and allows dismissing keyboard by tapping
     override func viewDidLoad() {
         super.viewDidLoad()
         taskSwitchOutlet.isOn = false
@@ -40,6 +43,7 @@ class newItemViewController: UIViewController, UITextFieldDelegate {
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
     }
     
+    // Formats dates
     func newDate() {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
@@ -47,12 +51,13 @@ class newItemViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    
+    // Dismiss keyboard when return is tapped
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         nameField.resignFirstResponder()
         return true
     }
     
+    // When cancel is tapped go back to the tabs
     @IBAction func cancelPressed(_ sender: UIBarButtonItem) {
         switch num {
         case 1:
@@ -65,6 +70,8 @@ class newItemViewController: UIViewController, UITextFieldDelegate {
             print("f")
         }
     }
+    
+    // When done is pressed append to respective arrays and go back to tabs. If no names are entered dont save anything
     @IBAction func donePressed(_ sender: Any) {
         guard let safeName = nameField.text else {return}
         guard safeName != "" else {return}
@@ -90,6 +97,7 @@ class newItemViewController: UIViewController, UITextFieldDelegate {
         
     }
 
+    // Adds functionality for notifications
     func notifications() {
         remindTime = taskDatePicker.date
         let content = UNMutableNotificationContent()
@@ -102,17 +110,4 @@ class newItemViewController: UIViewController, UITextFieldDelegate {
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     
     }
-    
-    /*func getMinutes() {
-        taskSwitchOutlet.isOn = true
-        remindTime = taskDatePicker.date
-        let components = Calendar.current.dateComponents([.hour, .minute], from: remindTime)
-        guard let hour = components.hour else {return}
-        guard let minute = components.minute else {return}
-        let minutes = Double((60 * hour) + minute)
-        notifications(seconds: (60 * minutes), repeats: false)
-    }*/
-
-    
-    
 }

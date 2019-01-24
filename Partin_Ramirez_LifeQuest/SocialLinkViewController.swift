@@ -15,6 +15,7 @@ class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableVi
     var peripherals = [CBPeripheral]()
     var peripheralUUIDsFound = NSMutableSet()
     
+    // Outlets
     @IBOutlet weak var socialTableView: UITableView!
     
     // Table View  Stuff
@@ -55,7 +56,7 @@ class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableVi
         present(connectAlert, animated: true, completion: nil)
     }
     
-    // Find
+    // Finds bluetooth devices and takes the names and puts them into an array
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         if let name = peripheral.name {
             names.append(name)
@@ -67,6 +68,7 @@ class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableVi
         socialTableView.reloadData()
     }
     
+    // Adds functionality to bluetooth if it works and if it doesn't give an alert
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         if central.state == .poweredOn {
             // If bluetooth is working
@@ -82,7 +84,7 @@ class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
     
-    
+    // When done is pressed disconnect from the device and bring user back to the social link tab
     @IBAction func DoneTapped(_ sender: Any) {
         if let safeblePeripheral = blePeripheral {
             centralManager?.cancelPeripheralConnection(safeblePeripheral)
@@ -90,11 +92,12 @@ class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableVi
         }
         performSegue(withIdentifier: "unwindToLink", sender: self)
     }
-    
+    // Refreshes the bluetooth devices found
     @IBAction func refreshTapped(_ sender: Any) {
     startScan()
     }
     
+    // Function that empties all arrays and starts a scan for devices again
     func startScan() {
         names = []
         RSSIs = []
@@ -108,7 +111,7 @@ class SocialLinkViewController: UIViewController, UITableViewDelegate, UITableVi
     
     
     
-    
+    // Allows central manager to delegate
     override func viewDidLoad() {
         super.viewDidLoad()
         centralManager = CBCentralManager(delegate: self, queue: nil)
