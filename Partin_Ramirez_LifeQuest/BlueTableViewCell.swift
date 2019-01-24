@@ -8,6 +8,7 @@
 
 import UIKit
 
+//creates a table view cell for the bluetooth view controller
 class BlueTableViewCell: UITableViewCell {
 
     @IBOutlet weak var peripheralNameLabel: UILabel!
@@ -18,7 +19,8 @@ class BlueTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
+    //adds animation functionality
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
