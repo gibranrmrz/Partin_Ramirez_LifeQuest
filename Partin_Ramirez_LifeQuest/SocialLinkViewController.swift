@@ -3,7 +3,6 @@ import UIKit
 import CoreBluetooth
 
 var blePeripheral: CBPeripheral?
-//let iPhoneServiceCBUUID = CBUUID(string: "6622B0F9960369649A124F844E0DAB31C91BCB0B")
 var names: [String] = []
 var RSSIs: [NSNumber] = []
 
