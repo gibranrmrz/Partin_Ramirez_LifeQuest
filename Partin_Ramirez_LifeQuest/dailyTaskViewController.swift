@@ -10,6 +10,7 @@ import UIKit
 
 class dailyTaskViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    //
     @IBOutlet weak var taskTableView: UITableView!
     @IBOutlet weak var lvlOutlet: UIBarButtonItem!
     

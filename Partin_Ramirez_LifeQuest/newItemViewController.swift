@@ -73,11 +73,11 @@ class newItemViewController: UIViewController, UITextFieldDelegate {
             theTaskArray.append(newTask)
             performSegue(withIdentifier: "unwindToTask", sender: self)
         case 2:
-            let newGoal = Goal(title: safeName, done: false)
+            let newGoal = Goal(title: safeName)
             theGoalArray.append(newGoal)
             performSegue(withIdentifier: "unwindToGoal", sender: self)
         case 3:
-            let newLink = SocialLink(name: safeName, met: false)
+            let newLink = SocialLink(name: safeName)
             theLinkArray.append(newLink)
             performSegue(withIdentifier: "unwindToLink", sender: self)
         default:

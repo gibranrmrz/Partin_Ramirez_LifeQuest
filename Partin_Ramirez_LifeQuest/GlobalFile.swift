@@ -1,21 +1,23 @@
 
 import Foundation
 
-
+//creates values for the xp and levels
 let levelUpXP = 500
 let defaultXp = 200
 let defaultlevel = 1
 
-//var level = defaultlevel
-//var currentXP = defaultXp
+//creates an item of type user
 var thisUser = User(level: defaultlevel, currentXP: defaultXp)
-var bleName = String()
 
+//creates a number to determine what the item is being made for
 var num = 1
+
+//makes arrays for the 3 different items
 var theTaskArray: [Task] = []
 var theGoalArray: [Goal] = []
 var theLinkArray: [SocialLink] = []
 
+//function that changes xp values and levels
 func levelUp(gained: Int){
     thisUser.currentXP += gained
     if thisUser.currentXP >= levelUpXP {
@@ -24,30 +26,31 @@ func levelUp(gained: Int){
     }
 }
 
+//structure for a user
 struct User: Codable {
     var level: Int
     var currentXP: Int
 }
+
+//strucuture that makes daily tasks, goals, and social links
 struct Task: Codable {
     var title: String
-    //var completed : Bool
 }
 struct Goal: Codable {
     var title: String
-    var done: Bool
 }
 struct SocialLink: Codable {
     var name: String
-    var met: Bool
 }
 
+//creates paths to save 4 data items
 let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
 let archiveURL = documentsDirectory.appendingPathComponent("notes_test").appendingPathExtension("plist")
 let archiveURL2 = documentsDirectory.appendingPathComponent("notes_test").appendingPathExtension("plist2")
 let archiveURL3 = documentsDirectory.appendingPathComponent("notes_test").appendingPathExtension("plist3")
 let archiveURL4 = documentsDirectory.appendingPathComponent("notes_test").appendingPathExtension("plist4")
-//let archiveURL5 = documentsDirectory.appendingPathComponent("notes_test").appendingPathExtension("plist5")
 
+//saves data using the plist encoder
 func saveData() {
     let pListEncoder = PropertyListEncoder()
     let encodedItem = try? pListEncoder.encode(theTaskArray)
@@ -63,6 +66,7 @@ func saveData() {
     try? veryNewEncodedItem?.write(to: archiveURL4, options: .noFileProtection)
 }
 
+//loads data using the plist encoder
 func loadData() {
     let pListDecoder = PropertyListDecoder()
     if let retrivedItemsData = try? Data(contentsOf: archiveURL), let decodedNotes = try?
@@ -76,11 +80,9 @@ func loadData() {
     if let retrivedItemsData = try? Data(contentsOf: archiveURL3), let decodedNotes = try?
         pListDecoder.decode(Array<SocialLink>.self, from: retrivedItemsData) {
         theLinkArray = decodedNotes
-        print("3 works")
     }
     if let retrivedItemsData = try? Data(contentsOf: archiveURL4), let decodedNotes = try?
         pListDecoder.decode(User.self, from: retrivedItemsData) {
         thisUser = decodedNotes
     }
-    print("this works")
 }

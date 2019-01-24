@@ -3,19 +3,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    
+    //makes outlets for the start button and view
     @IBOutlet weak var StartButton: UIButton!
     @IBOutlet weak var viewOutlet: UIView!
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    //resets the view and then fades in and out
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewOutlet.alpha = 0.0
