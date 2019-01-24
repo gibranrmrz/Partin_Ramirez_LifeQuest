@@ -332,7 +332,7 @@
         <scene sceneID="iYK-xF-6hz">
             <objects>
                 <viewController id="0o3-UN-EH4" customClass="newItemViewController" customModule="Partin_Ramirez_LifeQuest" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="p1w-bN-2YU" customClass="newItemVi">
+                    <view key="view" contentMode="scaleToFill" id="p1w-bN-2YU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -427,6 +427,6 @@
         <image name="scroll-png-png-745x1024-scroll-with-no-background-745" width="745" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="unJ-sF-i2t"/>
+        <segue reference="dMs-wU-ZHy"/>
     </inferredMetricsTieBreakers>
 </document>

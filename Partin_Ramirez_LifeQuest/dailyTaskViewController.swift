@@ -25,7 +25,7 @@ class dailyTaskViewController: UIViewController, UITableViewDataSource, UITableV
         return ourCellsTest
     }
     
-    //Adds a checkmark when a row is selected, adds the appropriate experience, and updates the level
+    //adds a checkmark when a row is selected, adds the appropriate experience, and updates the level
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView.cellForRow(at: indexPath)?.accessoryType != UITableViewCell.AccessoryType.checkmark {
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
@@ -64,15 +64,15 @@ class dailyTaskViewController: UIViewController, UITableViewDataSource, UITableV
     @IBAction func unwindToTask(unwindSegue: UIStoryboardSegue) {
     }
     
-    //reloads the data when the view will appear
+    //reloads level button and the data when the view will appear
     override func viewWillAppear(_ animated: Bool) {
+        lvlOutlet.title = "Lvl: \(String(thisUser.level))"
         taskTableView.reloadData()
     }
     
-    //updates the level button and the bar image when the view loads
+    //updates the bar image when the view loads
     override func viewDidLoad() {
         super.viewDidLoad()
-        lvlOutlet.title = "Lvl: \(String(thisUser.level))"
         dailyTabBar.image = #imageLiteral(resourceName: "bed")
     }
 
