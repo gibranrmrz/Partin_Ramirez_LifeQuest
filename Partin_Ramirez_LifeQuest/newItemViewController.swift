@@ -83,6 +83,9 @@ class newItemViewController: UIViewController, UITextFieldDelegate {
         default:
             print("f")
         }
+        if taskSwitchOutlet.isOn == true {
+            notifications()
+        }
     }
 
     func notifications() {
