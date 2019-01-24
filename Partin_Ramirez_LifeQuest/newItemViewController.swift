@@ -67,6 +67,9 @@ class newItemViewController: UIViewController, UITextFieldDelegate {
     @IBAction func donePressed(_ sender: Any) {
         guard let safeName = nameField.text else {return}
         guard safeName != "" else {return}
+        if taskSwitchOutlet.isOn == true {
+            notifications()
+        }
         switch num {
         case 1:
             let newTask = Task(title: safeName)
@@ -83,9 +86,7 @@ class newItemViewController: UIViewController, UITextFieldDelegate {
         default:
             print("f")
         }
-        if taskSwitchOutlet.isOn == true {
-            notifications()
-        }
+        
     }
 
     func notifications() {
