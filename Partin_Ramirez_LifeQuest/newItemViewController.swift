@@ -90,6 +90,7 @@ class newItemViewController: UIViewController, UITextFieldDelegate {
     }
 
     func notifications() {
+        remindTime = taskDatePicker.date
         let content = UNMutableNotificationContent()
         guard let safeText = nameField.text else {return}
         content.title = safeText
@@ -98,6 +99,7 @@ class newItemViewController: UIViewController, UITextFieldDelegate {
         let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
         let request = UNNotificationRequest(identifier: "studyTime", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+    
     }
     
     /*func getMinutes() {
